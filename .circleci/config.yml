@@ -53,7 +53,7 @@ jobs:
           name: run analyze
           command: npm audit
 workflows:
-  say-hello-workflow:
+  sample-project-workflow:
     jobs:
       - build
       - test:
