@@ -12,8 +12,10 @@ jobs:
           name: "install node_module"
           command: npm install
       - save_cache:
-        - key: node_module_cache
-        - path: node_module
+        paths:
+          - node_module
+        key:
+          - node_module_cache
       - run:
           name: run lint
           command: npm run lint
