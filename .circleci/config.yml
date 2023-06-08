@@ -50,7 +50,7 @@ jobs:
           command: npm install
       - run:
           name: run analyze
-          command: npm run analyze
+          command: npm run audit
 workflows:
   say-hello-workflow:
     jobs:
