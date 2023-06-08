@@ -17,7 +17,7 @@ jobs:
           key: node_module_cache
       - run:
           name: run lint
-          command: npm lint
+          command: npm run lint
   test:
     docker:
       - image: circleci/node:13.8.0
