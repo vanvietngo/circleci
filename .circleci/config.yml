@@ -25,6 +25,15 @@ jobs:
       - run:
           name: "Test"
           command: "echo test step!"
+      - restore_cache:
+          keys:
+            - "node_module_cache"
+      - run:
+          name: "install node_module"
+          command: npm install
+      - run:
+          name: run test
+          command: npm run test
   analyze:
     docker:
       - image: cimg/base:stable
@@ -33,7 +42,15 @@ jobs:
       - run:
           name: "Analyze"
           command: "echo analyze step"
-
+      - restore_cache:
+          keys:
+            - "node_module_cache"
+      - run:
+          name: "install node_module"
+          command: npm install
+      - run:
+          name: run analyze
+          command: npm run analyze
 workflows:
   say-hello-workflow:
     jobs:
